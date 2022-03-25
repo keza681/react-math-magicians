@@ -1,5 +1,5 @@
 # react-math-magicians
-This is the first project of the Math Magicians application. 
+In this project, I continue with the development of the Math Magicians app. I develop a React component that will hold the core functionality: a calculator. 
 
 ## Built With
 
@@ -11,7 +11,7 @@ This is the first project of the Math Magicians application.
 ## Getting Started
  Cloning the project: In your computer, go in the terminal and type
 ```
-git clone https://github.com/keza681/LDboard.git 
+git clone https://github.com/keza681/react-math-magicians.git 
 ```
 
 ## Authors
