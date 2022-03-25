@@ -1,0 +1,78 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.calc-container {
+  width: 90vw;
+  height: 60vh;
+  background-color: rgb(100, 100, 100);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  margin-top: 2rem;
+}
+
+.screen {
+  grid-column: 1 / span 4;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+}
+
+.btn {
+  all: unset;
+  display: grid;
+  place-content: center;
+  background-color: #ccc;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.btn:hover {
+  background-color: grey;
+  color: white;
+}
+
+.btn:active {
+  background-color: black;
+}
+
+.orange {
+  background-color: #f3913e;
+}
+
+.orange:hover {
+  background-color: #ff4300;
+}
+
+.orange:active {
+  background-color: #d30000;
+}
+
+.zero {
+  grid-column: 1 / span 2;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+
+  .calc-container {
+    width: 40vw;
+  }
+}
