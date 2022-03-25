@@ -1,56 +1,54 @@
-import React from 'react';
-import calculate from '../Logic/calculate';
+import React, { useState } from 'react';
 import './calculator.css';
+import calculate from '../Logic/calculate';
 
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: 0,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const Calculator = () => {
+  const Istate = {
+    total: 0,
+    next: null,
+    operation: null,
+  };
 
-  handleClick(btn) {
+  const [click, setClick] = useState(Istate);
+
+  const handleClick = (btn) => {
     const btnValue = btn.target.textContent;
-    this.setState((e) => calculate(e, btnValue));
-  }
+    const newClick = { ...click };
+    setClick(calculate(newClick, btnValue));
+  };
 
-  render() {
-    const { total, next, operation } = this.state;
-    return (
-
+  return (
+    <>
       <div className="container">
         <div className="calc-container">
           <div className="screen">
-            {total}
-            {operation}
-            {next}
+            {click.total}
+            {click.operation}
+            {click.next}
           </div>
-          <button type="button" onClick={this.handleClick} className="btn">AC</button>
-          <button type="button" onClick={this.handleClick} className="btn">+/-</button>
-          <button type="button" onClick={this.handleClick} className="btn">%</button>
-          <button type="button" onClick={this.handleClick} className="btn orange">÷</button>
-          <button type="button" onClick={this.handleClick} className="btn">7</button>
-          <button type="button" onClick={this.handleClick} className="btn">8</button>
-          <button type="button" onClick={this.handleClick} className="btn">9</button>
-          <button type="button" onClick={this.handleClick} className="btn orange">x</button>
-          <button type="button" onClick={this.handleClick} className="btn">4</button>
-          <button type="button" onClick={this.handleClick} className="btn">5</button>
-          <button type="button" onClick={this.handleClick} className="btn">6</button>
-          <button type="button" onClick={this.handleClick} className="btn orange">-</button>
-          <button type="button" onClick={this.handleClick} className="btn">1</button>
-          <button type="button" onClick={this.handleClick} className="btn">2</button>
-          <button type="button" onClick={this.handleClick} className="btn">3</button>
-          <button type="button" onClick={this.handleClick} className="btn orange">+</button>
-          <button type="button" onClick={this.handleClick} className="btn zero">0</button>
-          <button type="button" onClick={this.handleClick} className="btn">.</button>
-          <button type="button" onClick={this.handleClick} className="btn orange">=</button>
+          <button type="button" onClick={handleClick} className="btn">AC</button>
+          <button type="button" onClick={handleClick} className="btn">+/-</button>
+          <button type="button" onClick={handleClick} className="btn">%</button>
+          <button type="button" onClick={handleClick} className="btn orange">÷</button>
+          <button type="button" onClick={handleClick} className="btn">7</button>
+          <button type="button" onClick={handleClick} className="btn">8</button>
+          <button type="button" onClick={handleClick} className="btn">9</button>
+          <button type="button" onClick={handleClick} className="btn orange">x</button>
+          <button type="button" onClick={handleClick} className="btn">4</button>
+          <button type="button" onClick={handleClick} className="btn">5</button>
+          <button type="button" onClick={handleClick} className="btn">6</button>
+          <button type="button" onClick={handleClick} className="btn orange">-</button>
+          <button type="button" onClick={handleClick} className="btn">1</button>
+          <button type="button" onClick={handleClick} className="btn">2</button>
+          <button type="button" onClick={handleClick} className="btn">3</button>
+          <button type="button" onClick={handleClick} className="btn orange">+</button>
+          <button type="button" onClick={handleClick} className="btn zero">0</button>
+          <button type="button" onClick={handleClick} className="btn">.</button>
+          <button type="button" onClick={handleClick} className="btn orange">=</button>
         </div>
       </div>
+    </>
+  );
+};
 
-    );
-  }
-}
+export default Calculator;
