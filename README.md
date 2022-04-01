@@ -3,7 +3,7 @@
 > In this project, I continue with the development of the Math Magicians app. I develop a React component that will hold the core functionality: a calculator. 
 
 
-![pic](math.png)
+![pic](./math.png)
 
 ## Built With
 
