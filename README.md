@@ -1,6 +1,8 @@
 
 # react-math-magicians
 > In this project, I continue with the development of the Math Magicians app. I develop a React component that will hold the core functionality: a calculator. 
+> 
+![](math.png)
 
 ## Built With
 
